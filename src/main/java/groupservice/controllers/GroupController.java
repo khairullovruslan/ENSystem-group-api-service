@@ -1,5 +1,4 @@
-package org.apiservice.controllers;
-
+package groupservice.controllers;
 
 
 import groupservice.DTO.GroupDTO;
@@ -22,11 +21,17 @@ public class GroupController {
         this.groupService = groupService;
     }
 
-    @PostMapping
-    public ResponseEntity<Void> addNewGroup(@RequestBody GroupDTO group){
-        groupService.save(group);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+
+    @PostMapping()
+    public ResponseEntity<Group> addNewGroup(@RequestBody Group group){
+        return new ResponseEntity<>(groupService.save(group), HttpStatus.CREATED);
     }
+
+    @PostMapping("/update")
+    public ResponseEntity<Group> updateGroup(@RequestBody Group group){
+        return new ResponseEntity<>(groupService.updateGroupUserList(group), HttpStatus.CREATED);
+    }
+
 
     @GetMapping("{id}")
     public ResponseEntity<Group> getGroupById(@PathVariable("id") long id){

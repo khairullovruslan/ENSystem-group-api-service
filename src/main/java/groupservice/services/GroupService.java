@@ -43,4 +43,6 @@ public class GroupService {
     public void deleteGroupById(long id){
         groupRepository.deleteById(id);
     }
+
+    public Group updateGroupUserList(Group group) {return groupRepository.save(group);}
 }
