@@ -1,5 +1,8 @@
 package groupservice.services;
 
+import groupservice.DTO.GroupDTO;
+import groupservice.models.Group;
+import groupservice.repositories.GroupRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

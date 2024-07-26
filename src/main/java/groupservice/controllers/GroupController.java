@@ -2,6 +2,9 @@ package org.apiservice.controllers;
 
 
 
+import groupservice.DTO.GroupDTO;
+import groupservice.models.Group;
+import groupservice.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

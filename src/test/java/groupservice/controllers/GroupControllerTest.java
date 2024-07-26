@@ -1,7 +1,9 @@
 package groupservice.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apiservice.services.UserService;
+import groupservice.DTO.GroupDTO;
+import groupservice.models.Group;
+import groupservice.services.GroupService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +17,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -33,9 +34,6 @@ class GroupControllerTest {
 
     @MockBean
     private GroupService groupService;
-
-    @MockBean
-    private UserService userService;
 
     @Test
     @DisplayName("POST /groups/ возвращает HTTP-ответ со статусом 201 OK")
